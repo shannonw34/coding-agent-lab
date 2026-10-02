@@ -4,7 +4,7 @@ This program prints stdin to the screen.
 import sys
 
 def cat(file):
-    data = file.read()
+    while chunk := file.read(8192):
     sys.stdout.buffer.write(data)
 
 if __name__ == "__main__":

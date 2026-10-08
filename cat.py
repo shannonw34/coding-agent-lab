@@ -1,3 +1,4 @@
+cat > cat.py <<'EOF'
 '''
 This program prints stdin to the screen.
 '''
@@ -5,7 +6,7 @@ import sys
 
 def cat(file):
     while chunk := file.read(8192):
-    sys.stdout.buffer.write(data)
+        sys.stdout.buffer.write(chunk)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -14,3 +15,4 @@ if __name__ == "__main__":
                 cat(f)
     else:
         cat(sys.stdin.buffer)
+EOF
